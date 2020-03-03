@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6312565b-bda6-4be0-827e-663f75ffa6c5" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="mediFlow" doc:id="8df00f49-0d95-4caf-a3ae-e71c9fedc83d" >
+		<http:listener doc:name="Listener" doc:id="3dfeebfb-d4b9-4259-b9f9-82920a89a181" config-ref="HTTP_Listener_config" path="/mki"/>
+		<set-payload value="payload mekdi" doc:name="Set Payload" doc:id="832de829-5ff1-4937-ad75-371f724b4c1d" />
+	</flow>
+</mule>
